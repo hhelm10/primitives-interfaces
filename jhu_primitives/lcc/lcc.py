@@ -114,6 +114,8 @@ class LargestConnectedComponent(TransformerPrimitiveBase[Inputs, Outputs, Hyperp
 
             for i in range(n_edges):
                 G.add_edge(V1_nodeIDs[i], V2_nodeIDs[i], weight = edge_weights[i])
+                
+        print(type(G))
 
         csv = inputs['learningData']
 
