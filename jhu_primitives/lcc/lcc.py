@@ -3,6 +3,7 @@ import networkx as nx
 import numpy as np
 from typing import Sequence, TypeVar, Union, Dict
 import os
+import sys
 
 from d3m.primitive_interfaces.transformer import TransformerPrimitiveBase
 from d3m import container
@@ -115,7 +116,7 @@ class LargestConnectedComponent(TransformerPrimitiveBase[Inputs, Outputs, Hyperp
             for i in range(n_edges):
                 G.add_edge(V1_nodeIDs[i], V2_nodeIDs[i], weight = edge_weights[i])
                 
-        print(type(G))
+        print(type(G), file=sys.stderr)
 
         csv = inputs['learningData']
 
